@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Happy Birthday, My Love 🎂</title>
+  <title>Happy Birthday, My Girlfriend 🎂</title>
   <meta name="description" content="เว็บเซอร์ไพรส์วันเกิดสำหรับคนพิเศษของเรา" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#241127;           /* ชมพูอมม่วงเข้ม */
@@ -29,10 +29,11 @@
     }
     a{color:var(--accent)}
 
+    /* ---------- Utils ---------- */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
     /* ---------- Loading Screen ---------- */
-    #loader{
-      position:fixed; inset:0; display:grid; place-items:center; gap:18px; background:linear-gradient(180deg,#0c0d1a 0%, #0b0b14 100%); z-index:9999;
-    }
+    #loader{position:fixed; inset:0; display:grid; place-items:center; gap:18px; background:linear-gradient(180deg,#0c0d1a 0%, #0b0b14 100%); z-index:9999}
     .loader-card{padding:28px 34px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow); text-align:center}
     .dots{display:inline-flex; gap:8px; margin-top:8px}
     .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); animation: blink 1.2s infinite}
@@ -41,7 +42,7 @@
     @keyframes blink{0%,80%,100%{opacity:.15} 40%{opacity:1}}
 
     /* ---------- Sections Layout ---------- */
-    section{padding:72px 20px}
+    section{padding:64px 20px}
     .container{max-width:1100px; margin:0 auto}
     h1,h2{margin:0 0 10px}
     h2{font-size:clamp(22px,2.6vw,30px); font-weight:700}
@@ -49,41 +50,35 @@
     .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow)}
     .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:14px; border:1px solid rgba(255,95,158,.55); color:var(--white); background:linear-gradient(180deg, rgba(255,95,158,.85), rgba(255,95,158,.55)); cursor:pointer; transition:.2s; box-shadow:0 10px 20px rgba(255,95,158,.18)}
     .btn:hover{transform:translateY(-1px); box-shadow:0 14px 24px rgba(255,95,158,.28)}
+    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,.2)}
 
     /* ---------- Hero ---------- */
     .hero{position:relative; padding:0}
-    .hero .banner{
-      position:relative; min-height:72vh; display:grid; place-items:center; text-align:center; overflow:hidden; border-radius:0 0 28px 28px;
-    }
-    .hero .bg{
-      position:absolute; inset:0; background-size:cover; background-position:center; filter:saturate(1.05) contrast(1.03) brightness(.9);
-      transform:scale(1.03);
-    }
+    .hero .banner{position:relative; min-height:72vh; display:grid; place-items:center; text-align:center; overflow:hidden; border-radius:0 0 28px 28px}
+    .hero .bg{position:absolute; inset:0; background-size:cover; background-position:center; filter:saturate(1.05) contrast(1.03) brightness(.9); transform:scale(1.03)}
     .hero .overlay{position:absolute; inset:0; background:radial-gradient(800px 400px at 50% 10%, rgba(0,0,0,.0), rgba(10,10,20,.7) 60%, rgba(6,7,16,.9) 100%)}
-    .hero h1{font-family:'Sarabun', sans-serif; font-weight:800; letter-spacing:.2px; font-size:clamp(40px,7vw,68px); text-shadow: 0 12px 24px rgba(0,0,0,.55)}
-    .hero p{margin-top:6px; color:#cfd3ec}
+    .hero h1{font-weight:800; letter-spacing:.2px; font-size:clamp(40px,7vw,68px); text-shadow: 0 12px 24px rgba(0,0,0,.55)}
+    .hero p{margin-top:6px; color:#ffe6f3}
     .ribbon{margin-top:18px; padding:10px 16px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:999px; display:inline-flex; gap:10px}
+    .hero-cta{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:16px}
 
     /* ---------- Cake (CSS 3D-ish) ---------- */
-    .cake-wrap{display:grid; grid-template-columns:1fr; place-items:center; gap:26px}
+    .cake-wrap{display:grid; grid-template-columns:1fr; place-items:center; gap:18px}
     .stage{width:min(360px,90vw); height:260px; perspective:900px}
     .cake{position:relative; width:100%; height:100%; transform-style:preserve-3d; animation:float 6s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}}
-    .tier{position:absolute; left:50%; transform:translateX(-50%); background:linear-gradient(180deg,#ff9fc4,#ff75af 60%, #ff6ea5);
-      box-shadow: inset 0 10px 30px rgba(255,255,255,.35), 0 10px 20px rgba(0,0,0,.35); border-radius:20px}
+    .tier{position:absolute; left:50%; transform:translateX(-50%); background:linear-gradient(180deg,#ff9fc4,#ff75af 60%, #ff6ea5); box-shadow: inset 0 10px 30px rgba(255,255,255,.35), 0 10px 20px rgba(0,0,0,.35); border-radius:20px}
     .tier.t1{bottom:18px; width:70%; height:60px}
     .tier.t2{bottom:70px; width:55%; height:52px}
     .tier.t3{bottom:116px; width:40%; height:44px}
     .icing{position:absolute; inset:0; border-radius:20px; background:radial-gradient(80% 50% at 50% 0%, rgba(255,255,255,.9), rgba(255,255,255,0) 60%)}
     .plate{position:absolute; left:50%; bottom:8px; transform:translateX(-50%); width:86%; height:16px; background:linear-gradient(180deg,#fff,#c6c7d8); border-radius:999px; box-shadow:0 12px 26px rgba(0,0,0,.4)}
     .candle{position:absolute; bottom:150px; left:50%; transform:translateX(-50%); width:10px; height:48px; background:repeating-linear-gradient(180deg, #ffdbe9 0 10px, #ffc2db 10px 20px); border-radius:6px}
-    .flame{position:absolute; top:-14px; left:50%; transform:translateX(-50%); width:12px; height:18px; border-radius:10px 10px 10px 10px/16px 16px 8px 8px; background:radial-gradient(circle at 50% 40%, #fff 0%, var(--gold) 55%, rgba(255,120,0,.85) 100%); filter:blur(.2px); animation: flick 1s infinite}
+    .flame{position:absolute; top:-14px; left:50%; transform:translateX(-50%); width:12px; height:18px; border-radius:10px 10px 10px 10px/16px 16px 8px 8px; background:radial-gradient(circle at 50% 40%, #fff 0%, var(--gold) 55%, rgba(255,120,0,.85) 100%); filter:blur(.2px); animation: flick 1s infinite; box-shadow:0 0 20px rgba(255,180,90,.75)}
     @keyframes flick{0%,100%{transform:translateX(-50%) scale(1)} 50%{transform:translateX(calc(-50% + 2px)) scale(1.08)}}
 
-    .cta{margin-top:4px}
-
     /* ---------- Carousel ---------- */
-    .carousel{margin-top:10px; position:relative}
+    .carousel{margin-top:6px; position:relative}
     .carousel .viewport{position:relative; overflow:hidden; border-radius:var(--radius); border:1px solid rgba(255,255,255,.1)}
     .track{display:flex; transition: transform .45s ease}
     .slide{min-width:100%; position:relative}
@@ -94,11 +89,10 @@
     .nav-prev{left:10px}
     .nav-next{right:10px}
 
-    /* ---------- Unlock Promises ---------- */
-    .unlock{display:grid; grid-template-columns:1fr; gap:16px}
+    /* ---------- Unlock ---------- */
+    .unlock{display:grid; grid-template-columns:1fr; gap:14px}
     .unlock .row{display:flex; gap:10px; flex-wrap:wrap}
     .input{flex:1; min-width:220px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06); color:var(--white)}
-    .pill{display:inline-block; font-size:14px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); color:#cfd3ec}
     .promises{display:none; gap:12px}
     .promise{padding:14px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03))}
 
@@ -111,6 +105,9 @@
     /* ---------- Footer ---------- */
     footer{padding:40px 20px; text-align:center; color:#b8bdd7}
 
+    /* ---------- Floating Hearts Canvas (subtle) ---------- */
+    #hearts{position:fixed; inset:0; pointer-events:none; mix-blend-mode:screen; opacity:.35}
+
     /* Small */
     @media (max-width:640px){
       .slide img{height:300px}
@@ -121,6 +118,7 @@
 <body>
   <!-- Ambient Music (autoplay after first user interaction) -->
   <audio id="bgm" src="assets/bgm.mp3" preload="auto" loop></audio>
+
   <!-- Loading Screen -->
   <div id="loader">
     <div class="loader-card">
@@ -132,14 +130,16 @@
   <!-- HERO -->
   <section class="hero">
     <div class="banner">
-      <!-- เปลี่ยน URL พื้นหลังเป็นรูปคู่ของเรา -->
       <div class="bg" id="heroBg" style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1800&auto=format&fit=crop');"></div>
       <div class="overlay"></div>
       <div style="position:relative; z-index:2; padding:30px 18px">
-        <h1>Happy Birthday to My Everything</h1>
-        <p class="muted">วันนี้ทั้งหมดนี้คือของขวัญจากฉันถึงเธอ 💝</p>
-        <div class="ribbon"><span>🎉 Surprise Mode</span><span>•</span><span>2025</span></div>
-        <div class="cta" style="margin-top:18px"><button class="btn" onclick="document.getElementById('cake').scrollIntoView({behavior:'smooth'})">เลื่อนลงไปเป่าเค้ก 🎂</button></div>
+        <h1>Happy Birthday to My Girlfriend</h1>
+        <p id="typeLine" class="muted" aria-live="polite"></p>
+        <div class="ribbon"><span>🎉 Surprise</span><span>•</span><span>For You</span></div>
+        <div class="hero-cta">
+          <button class="btn" onclick="document.getElementById('cake').scrollIntoView({behavior:'smooth'})">ไปเป่าเทียน 🎂</button>
+          <button class="btn btn-ghost" id="shareBtn">แชร์ให้ยู 💌</button>
+        </div>
       </div>
     </div>
   </section>
@@ -148,8 +148,7 @@
   <section id="cake">
     <div class="container">
       <div class="cake-wrap">
-        <h2>เค้ก 3 ชั้นสำหรับเจ้าหญิงของฉัน</h2>
-        <p class="muted">อธิษฐานในใจ แล้วค่อย ๆ เป่าเทียนนะ ✨</p>
+        <h2>เค้ก 3 ชั้นสำหรับยู</h2>
         <div class="stage">
           <div class="cake" aria-label="birthday-cake">
             <div class="tier t1"><div class="icing"></div></div>
@@ -160,9 +159,10 @@
           </div>
         </div>
         <div>
-          <button class="btn" id="blowBtn">เป่าเทียน</button>
-          <span class="pill">Tip: คลิกปุ่มหรือกดปุ่ม B</span>
+          <button class="btn" id="blowBtn" aria-describedby="wish">เป่าเทียน</button>
+          <span id="wish" class="sr-only">อธิษฐานในใจ แล้วค่อย ๆ เป่าเทียน</span>
         </div>
+        <div id="wishMsg" class="muted" style="min-height:24px"></div>
       </div>
     </div>
   </section>
@@ -171,17 +171,14 @@
   <section id="memories">
     <div class="container">
       <h2>แกลเลอรี่ความทรงจำ</h2>
-      <p class="muted">เลือก 5–10 รูปที่ดีที่สุด ใส่คำบรรยายใต้ภาพให้ซึ้งสุดหัวใจ</p>
-
       <div class="carousel card" style="padding:10px">
         <div class="viewport">
           <div class="track" id="track">
-            <!-- เปลี่ยนรูปตามต้องการ -->
-            <figure class="slide"><img src="https://images.unsplash.com/photo-1504198266285-165a3e76e36d?q=80&w=1800&auto=format&fit=crop" alt="รูปที่ 1"><figcaption class="caption">วันแรกที่เราเจอกัน</figcaption></figure>
-            <figure class="slide"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1800&auto=format&fit=crop" alt="รูปที่ 2"><figcaption class="caption">กาแฟแก้วแรกที่ร้านประจำ</figcaption></figure>
-            <figure class="slide"><img src="https://images.unsplash.com/photo-1512427691650-1c9afee27f25?q=80&w=1800&auto=format&fit=crop" alt="รูปที่ 3"><figcaption class="caption">ทริปสั้น ๆ แต่ความสุขยาวมาก</figcaption></figure>
-            <figure class="slide"><img src="https://images.unsplash.com/photo-1515165562835-c3b8c0c4b06c?q=80&w=1800&auto=format&fit=crop" alt="รูปที่ 4"><figcaption class="caption">ยิ้มของเธอ = โลกทั้งใบ</figcaption></figure>
-            <figure class="slide"><img src="https://images.unsplash.com/photo-1504197800973-917e4fe9c3c9?q=80&w=1800&auto=format&fit=crop" alt="รูปที่ 5"><figcaption class="caption">คืนนี้จะจำไปอีกนาน</figcaption></figure>
+            <figure class="slide"><img loading="lazy" src="https://images.unsplash.com/photo-1504198266285-165a3e76e36d?q=80&w=1800&auto=format&fit=crop" alt="วันแรกที่เราเจอกัน"><figcaption class="caption">วันแรกที่เราเจอกัน</figcaption></figure>
+            <figure class="slide"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1800&auto=format&fit=crop" alt="กาแฟแก้วแรก"><figcaption class="caption">กาแฟแก้วแรกที่ร้านประจำ</figcaption></figure>
+            <figure class="slide"><img loading="lazy" src="https://images.unsplash.com/photo-1512427691650-1c9afee27f25?q=80&w=1800&auto=format&fit=crop" alt="ทริปสั้น ๆ"><figcaption class="caption">ทริปสั้น ๆ แต่ความสุขยาว</figcaption></figure>
+            <figure class="slide"><img loading="lazy" src="https://images.unsplash.com/photo-1515165562835-c3b8c0c4b06c?q=80&w=1800&auto=format&fit=crop" alt="ยิ้มของเธอ"><figcaption class="caption">ยิ้มของเธอ = โลกทั้งใบ</figcaption></figure>
+            <figure class="slide"><img loading="lazy" src="https://images.unsplash.com/photo-1504197800973-917e4fe9c3c9?q=80&w=1800&auto=format&fit=crop" alt="คืนนี้จะจำไปอีกนาน"><figcaption class="caption">คืนนี้จะจำไปอีกนาน</figcaption></figure>
           </div>
           <button class="nav-btn nav-prev" id="prev" aria-label="ก่อนหน้า">⟵</button>
           <button class="nav-btn nav-next" id="next" aria-label="ถัดไป">⟶</button>
@@ -193,34 +190,31 @@
   <!-- UNLOCK PROMISES + SECRET CODE -->
   <section id="unlock" class="card">
     <div class="container">
-      <h2>กล่องข้อความที่ต้องปลดล็อค</h2>
-      <p class="muted">พิมพ์ชื่อเล่นของเธอเพื่อเปิด <b>“คำมั่นสัญญา 3 ข้อ”</b></p>
+      <h2>ปลดล็อกด้วยชื่อเล่น & รหัสวันเกิด</h2>
       <div class="unlock">
         <div class="row">
-          <input id="nick" class="input" placeholder="พิมพ์ชื่อเล่นของเธอ เช่น 'น้องอิง'" />
+          <input id="nick" class="input" placeholder="ชื่อเล่นของเธอ" />
           <button class="btn" id="unlockBtn">ปลดล็อค 🔐</button>
         </div>
-        <div id="hint" class="muted" style="font-size:14px">* ตั้งชื่อล่วงหน้าในโค้ดตัวแปร <code>EXPECTED_NICKNAME</code></div>
+        <div id="hint" class="muted" style="font-size:14px"></div>
         <div id="promises" class="promises">
-          <div class="promise">1) จะเป็นที่พึ่งและเพื่อนคู่คิดในทุกการตัดสินใจ</div>
-          <div class="promise">2) จะจัดสรรเวลาให้เธอเสมอ ไม่ว่าตารางจะยุ่งแค่ไหน</div>
-          <div class="promise">3) จะซื่อสัตย์ จริงใจ และเติบโตไปพร้อมกันในทุกฤดู</div>
+          <div class="promise">1) เป็นเพื่อนคู่คิดในทุกการตัดสินใจ</div>
+          <div class="promise">2) แบ่งเวลาให้เสมอ ไม่ว่าตารางจะยุ่ง</div>
+          <div class="promise">3) ซื่อสัตย์ จริงใจ เติบโตไปด้วยกัน</div>
         </div>
       </div>
 
-      <hr style="margin:26px 0; opacity:.3; border-color:rgba(255,255,255,.1)">
+      <hr style="margin:20px 0; opacity:.3; border-color:rgba(255,255,255,.1)">
 
-      <h2>ปลดล็อกเซกชันลับด้วยรหัสวันเกิด</h2>
-      <p class="muted">กรอกรหัส <b>301036</b> เพื่อเปิดข้อความลับเฉพาะของเรา</p>
       <div class="unlock">
         <div class="row">
-          <input id="bdaycode" class="input" placeholder="กรอกรหัสวันเกิด (6 หลัก)" maxlength="6" />
-          <button class="btn" id="unlockCodeBtn">ปลดล็อคข้อความลับ 🗝️</button>
+          <input id="bdaycode" class="input" placeholder="รหัสวันเกิด (6 หลัก)" maxlength="6" />
+          <button class="btn" id="unlockCodeBtn">ข้อความลับ 🗝️</button>
         </div>
-        <div id="codeHint" class="muted" style="font-size:14px">* ใส่รหัสถูกจะมีคอนเฟตติพร้อมข้อความพิเศษ</div>
+        <div id="codeHint" class="muted" style="font-size:14px"></div>
         <div id="secretBox" class="promises" style="display:none">
-          <div class="promise">🌙 <b>ข้อความลับ:</b> ไม่ว่ากี่ปี ตัวเลขจะหมุนไปกี่ครั้ง “ฉันก็ยังเลือกเธอเหมือนเดิม”</div>
-          <div class="promise">💌 เจอกันที่เดิม 19:30 น. มีเซอร์ไพรส์ต่อ (เช็คกล่องข้อความอีกที 😉)</div>
+          <div class="promise">🌙 ไม่ว่าปีไหน เลขจะเปลี่ยนกี่ครั้ง — ฉันก็ยังเลือกเธอเหมือนเดิม</div>
+          <div class="promise">💌 คืนนี้ 19:30 น. เจอกันที่เดิม มีภารกิจหัวใจต่อ 😉</div>
         </div>
       </div>
     </div>
@@ -229,20 +223,18 @@
   <!-- CARD STACK (10 ภาพซ้อน) -->
   <section id="cards">
     <div class="container">
-      <h2>การ์ดรูปซ้อน ๆ 10 ใบ</h2>
-      <p class="muted">แตะ “ต่อไป” เพื่อดูรูปทีละใบ หรือคลิกที่รูปเพื่อเลื่อนไปใบถัดไป</p>
+      <h2>การ์ดรูปซ้อน 10 ใบ</h2>
       <div class="stack card" id="stack">
-        <!-- เปลี่ยนรูปตามต้องการ 10 รูป -->
-        <div class="card-photo" style="--rz:-2deg; --ty:-6px"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1600&auto=format&fit=crop" alt="c1"></div>
-        <div class="card-photo" style="--rz:1deg;"><img src="https://images.unsplash.com/photo-1510776635299-3f4b3c5b0ef2?q=80&w=1600&auto=format&fit=crop" alt="c2"></div>
-        <div class="card-photo" style="--rz:-1.5deg"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1600&auto=format&fit=crop" alt="c3"></div>
-        <div class="card-photo" style="--rz:2deg"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" alt="c4"></div>
-        <div class="card-photo" style="--rz:-2deg"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1600&auto=format&fit=crop" alt="c5"></div>
-        <div class="card-photo" style="--rz:1.2deg"><img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?q=80&w=1600&auto=format&fit=crop" alt="c6"></div>
-        <div class="card-photo" style="--rz:-1deg"><img src="https://images.unsplash.com/photo-1500534314210-9d6b6fa9b2b1?q=80&w=1600&auto=format&fit=crop" alt="c7"></div>
-        <div class="card-photo" style="--rz:1.5deg"><img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?q=80&w=1600&auto=format&fit=crop" alt="c8"></div>
-        <div class="card-photo" style="--rz:-.6deg"><img src="https://images.unsplash.com/photo-1494548162494-384bba4ab999?q=80&w=1600&auto=format&fit=crop" alt="c9"></div>
-        <div class="card-photo" style="--rz:.8deg"><img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1600&auto=format&fit=crop" alt="c10"></div>
+        <div class="card-photo" style="--rz:-2deg; --ty:-6px"><img loading="lazy" src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1600&auto=format&fit=crop" alt="c1"></div>
+        <div class="card-photo" style="--rz:1deg;"><img loading="lazy" src="https://images.unsplash.com/photo-1510776635299-3f4b3c5b0ef2?q=80&w=1600&auto=format&fit=crop" alt="c2"></div>
+        <div class="card-photo" style="--rz:-1.5deg"><img loading="lazy" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1600&auto=format&fit=crop" alt="c3"></div>
+        <div class="card-photo" style="--rz:2deg"><img loading="lazy" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" alt="c4"></div>
+        <div class="card-photo" style="--rz:-2deg"><img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1600&auto=format&fit=crop" alt="c5"></div>
+        <div class="card-photo" style="--rz:1.2deg"><img loading="lazy" src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?q=80&w=1600&auto=format&fit=crop" alt="c6"></div>
+        <div class="card-photo" style="--rz:-1deg"><img loading="lazy" src="https://images.unsplash.com/photo-1500534314210-9d6b6fa9b2b1?q=80&w=1600&auto=format&fit=crop" alt="c7"></div>
+        <div class="card-photo" style="--rz:1.5deg"><img loading="lazy" src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?q=80&w=1600&auto=format&fit=crop" alt="c8"></div>
+        <div class="card-photo" style="--rz:-.6deg"><img loading="lazy" src="https://images.unsplash.com/photo-1494548162494-384bba4ab999?q=80&w=1600&auto=format&fit=crop" alt="c9"></div>
+        <div class="card-photo" style="--rz:.8deg"><img loading="lazy" src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1600&auto=format&fit=crop" alt="c10"></div>
       </div>
       <div class="stack-ctrl">
         <button class="btn" id="nextCard">ต่อไป ➜</button>
@@ -251,45 +243,75 @@
   </section>
 
   <footer>
-    สร้างด้วยรัก 💗 — แก้ไขรูป/ข้อความในไฟล์เดียวนี้แล้วอัปขึ้น GitHub Pages หรือโฮสต์ที่คุณชอบได้ทันที
+    สร้างด้วยรัก 💗 — กดแชร์ส่งให้ยูได้เลย
   </footer>
 
   <!-- ปุ่มควบคุมเพลงลอยมุมขวาล่าง -->
   <button id="musicToggle" class="btn" style="position:fixed; right:16px; bottom:16px; z-index:9999; display:none">⏵︎ เปิดเพลง</button>
 
+  <!-- Effects Canvases -->
+  <canvas id="hearts"></canvas>
   <canvas id="confetti" style="position:fixed; inset:0; pointer-events:none"></canvas>
 
   <script>
-    // ---------- Config (แก้ค่านี้ให้ตรงกับของจริง) ----------
-    const EXPECTED_NICKNAME = 'น้องอิง';  // ← ตั้งชื่อเล่นแฟน
-    const EXPECTED_CODE = '301036';       // ← รหัสวันเกิดสำหรับปลดล็อกข้อความลับ
-    const HERO_BG_URL = 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1800&auto=format&fit=crop'; // รูปพื้นหลังหน้า Hero
+    // ---------- Config ----------
+    const EXPECTED_NICKNAME = 'เกรซ';
+    const EXPECTED_CODE = '301036';
+    const HERO_BG_URL = 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1800&auto=format&fit=crop';
 
     // ---------- Loader ----------
     const loader = document.getElementById('loader');
-    window.addEventListener('load', ()=>{
-      setTimeout(()=> loader.style.display='none', 900); // เอฟเฟกต์รอเล็กน้อยให้เนียน
-    });
+    window.addEventListener('load', ()=>{ setTimeout(()=> loader.style.display='none', 700); });
 
-    // ---------- Hero BG (เผื่ออยากสลับภาพผ่าน config) ----------
+    // ---------- Hero Typing ----------
     document.getElementById('heroBg').style.backgroundImage = `url('${HERO_BG_URL}')`;
+    const typeTarget = document.getElementById('typeLine');
+    const heroLines = [
+      'ขอบคุณที่เกิดมาให้ฉันได้รัก',
+      'ทุกวันมีเธอ = ทุกวันพิเศษ',
+      'วันนี้เป็นของเธอทั้งหมด ❤️'
+    ];
+    function typeSeq(lines, el){
+      let i=0, j=0, dir=1; el.textContent='';
+      function tick(){
+        const word = lines[i];
+        j += dir;
+        el.textContent = word.slice(0, j);
+        if(j===word.length){ dir=-1; setTimeout(tick, 1000); return; }
+        if(j===0){ dir=1; i=(i+1)%lines.length; }
+        setTimeout(tick, 40);
+      }
+      tick();
+    }
+    typeSeq(heroLines, typeTarget);
 
-    // ---------- Cake: Blow candle ----------
+    // ---------- Cake ----------
     const flame = document.getElementById('flame');
     const blowBtn = document.getElementById('blowBtn');
+    const wishMsg = document.getElementById('wishMsg');
     let candleLit = true;
     function toggleCandle(){
       candleLit = !candleLit;
       flame.style.display = candleLit ? 'block' : 'none';
       if(!candleLit){
-        fireConfetti(220);
-        setTimeout(()=>document.getElementById('memories').scrollIntoView({behavior:'smooth'}), 600);
+        wishMsg.textContent = '';
+        typeToast(['ขอให้วันนี้เต็มไปด้วยรอยยิ้ม','สุขภาพดี เงินดี งานดี และรักดี','ขอให้ความรักของเราดีขึ้นทุกวัน 💖'], wishMsg);
+        fireConfetti(240);
+        navigator.vibrate?.(40);
+        setTimeout(()=>document.getElementById('memories').scrollIntoView({behavior:'smooth'}), 800);
       }
     }
     blowBtn.addEventListener('click', toggleCandle);
     window.addEventListener('keydown', e=>{ if(e.key.toLowerCase()==='b') toggleCandle(); });
 
-    // ---------- Carousel ----------
+    function typeToast(lines, el){
+      let i=0; (function next(){
+        const txt = lines[i++%lines.length]; let k=0; el.textContent='';
+        const iv = setInterval(()=>{ el.textContent = txt.slice(0, ++k); if(k>=txt.length) clearInterval(iv); }, 20);
+      })();
+    }
+
+    // ---------- Carousel + Swipe ----------
     const track = document.getElementById('track');
     const slides = Array.from(track.children);
     let index = 0;
@@ -297,199 +319,110 @@
     document.getElementById('prev').onclick = ()=> go(index-1);
     document.getElementById('next').onclick = ()=> go(index+1);
 
-    // ---------- Unlock Promises ----------
+    // Swipe
+    let startX=0, dragging=false;
+    track.addEventListener('pointerdown', e=>{ dragging=true; startX=e.clientX; track.setPointerCapture(e.pointerId); });
+    track.addEventListener('pointerup', e=>{ if(!dragging) return; const dx=e.clientX-startX; dragging=false; if(Math.abs(dx)>50){ dx>0? go(index-1):go(index+1); } });
+    track.addEventListener('pointercancel', ()=> dragging=false);
+
+    // ---------- Unlocks ----------
     const nickInput = document.getElementById('nick');
     const unlockBtn = document.getElementById('unlockBtn');
     const promises = document.getElementById('promises');
     const hint = document.getElementById('hint');
-
     function typeIn(node){
-      const kids = [...node.children];
-      node.style.display='grid';
-      kids.forEach((el, i)=>{
-        const full = el.textContent; el.textContent='';
-        setTimeout(()=>{
-          let j=0; const iv=setInterval(()=>{ el.textContent = full.slice(0, ++j); if(j>=full.length) clearInterval(iv); }, 18);
-        }, i*500);
-      });
+      const kids = [...node.children]; node.style.display='grid';
+      kids.forEach((el, i)=>{ const full = el.textContent; el.textContent=''; setTimeout(()=>{ let j=0; const iv=setInterval(()=>{ el.textContent = full.slice(0, ++j); if(j>=full.length) clearInterval(iv); }, 18); }, i*400); });
     }
-
+    function flash(el){ el.animate([{transform:'scale(1)'},{transform:'scale(1.03)'},{transform:'scale(1)'}],{duration:260}); el.style.borderColor = '#ff8ba7'; setTimeout(()=> el.style.borderColor = 'rgba(255,255,255,.16)', 500); }
     function unlock(){
       const v = nickInput.value.trim();
       if(!v){ nickInput.focus(); return; }
-      if(v === EXPECTED_NICKNAME){
-        typeIn(promises);
-        fireConfetti(260);
-        hint.textContent = 'ปลดล็อคแล้ว! ❤️';
-      }else{
-        hint.textContent = 'ชื่อยังไม่ตรง ลองอีกครั้งนะ';
-        flash(nickInput);
-      }
+      if(v === EXPECTED_NICKNAME){ typeIn(promises); fireConfetti(260); hint.textContent = 'ปลดล็อคแล้ว! ❤️'; }
+      else{ hint.textContent = 'ชื่อยังไม่ตรง ลองอีกครั้งนะ'; flash(nickInput); navigator.vibrate?.([10,30,10]); }
     }
     unlockBtn.addEventListener('click', unlock);
     nickInput.addEventListener('keydown', e=>{ if(e.key==='Enter') unlock(); });
 
-    // ---------- Secret Code Unlock ----------
     const codeInput = document.getElementById('bdaycode');
     const codeBtn = document.getElementById('unlockCodeBtn');
     const codeHint = document.getElementById('codeHint');
     const secretBox = document.getElementById('secretBox');
-
-    function sanitizeDigits(s){ return String(s||'').replace(/\D/g,''); }
-
+    const sanitizeDigits = s=> String(s||'').replace(/\D/g,'');
     function unlockCode(){
       const v = sanitizeDigits(codeInput.value);
-      if(v === EXPECTED_CODE){
-        secretBox.style.display = 'grid';
-        typeIn(secretBox);
-        fireConfetti(300);
-        codeHint.textContent = 'ปลดล็อคแล้ว! 🎁';
-      }else{
-        codeHint.textContent = 'รหัสไม่ถูกต้อง ลองอีกครั้งนะ';
-        flash(codeInput);
-      }
+      if(v === EXPECTED_CODE){ secretBox.style.display = 'grid'; typeIn(secretBox); fireConfetti(300); codeHint.textContent = 'ปลดล็อคแล้ว! 🎁'; navigator.vibrate?.(40); }
+      else{ codeHint.textContent = 'รหัสไม่ถูกต้อง ลองอีกครั้งนะ'; flash(codeInput); }
     }
     codeBtn?.addEventListener('click', unlockCode);
     codeInput?.addEventListener('keydown', e=>{ if(e.key==='Enter') unlockCode(); });
 
-    // ---------- Card Stack (10 รูป) ----------
+    // ---------- Card Stack ----------
     const stack = document.getElementById('stack');
     const photos = Array.from(stack.querySelectorAll('.card-photo'));
     photos.forEach((p,i)=> p.style.zIndex = String(100 - i));
-
     function nextCard(){
       if(photos.length===0) return;
       const first = photos.shift();
       first.style.opacity = '0';
       first.style.transform += ' translateX(40px) rotate(6deg) translateY(20px)';
-      setTimeout(()=>{
-        first.style.opacity = '1';
-        first.style.transform = 'rotateZ(' + (Math.random()*3-1.5).toFixed(1) + 'deg)';
-        stack.appendChild(first);
-        photos.push(first);
-        photos.forEach((p,i)=> p.style.zIndex = String(100 - i));
-      }, 520);
+      setTimeout(()=>{ first.style.opacity = '1'; first.style.transform = 'rotateZ(' + (Math.random()*3-1.5).toFixed(1) + 'deg)'; stack.appendChild(first); photos.push(first); photos.forEach((p,i)=> p.style.zIndex = String(100 - i)); }, 520);
     }
     document.getElementById('nextCard').addEventListener('click', nextCard);
     stack.addEventListener('click', nextCard);
 
-    // ---------- Confetti (vanilla) ----------
-    const c = document.getElementById('confetti');
-    const ctx = c.getContext('2d');
-    function resize(){ c.width = innerWidth; c.height = innerHeight }
+    // ---------- Confetti ----------
+    const confettiCanvas = document.getElementById('confetti');
+    const ctx = confettiCanvas.getContext('2d');
+    function resize(){ confettiCanvas.width = innerWidth; confettiCanvas.height = innerHeight }
     window.addEventListener('resize', resize); resize();
-
     let confettiPieces = [];
     function fireConfetti(count=200){
-      for(let i=0;i<count;i++){
-        confettiPieces.push({
-          x: Math.random()*c.width,
-          y: -20,
-          r: 4+Math.random()*6,
-          vx: -1+Math.random()*2,
-          vy: 2+Math.random()*3,
-          rot: Math.random()*360,
-          vr: -6+Math.random()*12,
-          alpha: 1,
-        });
-      }
+      for(let i=0;i<count;i++) confettiPieces.push({x: Math.random()*confettiCanvas.width, y: -20, r: 4+Math.random()*6, vx: -1+Math.random()*2, vy: 2+Math.random()*3, rot: Math.random()*360, vr: -6+Math.random()*12, alpha: 1});
     }
     (function animate(){
       requestAnimationFrame(animate);
-      ctx.clearRect(0,0,c.width,c.height);
-      confettiPieces = confettiPieces.filter(p=> p.alpha>0 && p.y < c.height + 20);
-      confettiPieces.forEach(p=>{
-        p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.alpha -= 0.006;
-        ctx.save();
-        ctx.globalAlpha = Math.max(p.alpha,0);
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot * Math.PI/180);
-        const h = (p.rot % 360);
-        ctx.fillStyle = `hsl(${h}, 90%, 70%)`;
-        ctx.fillRect(-p.r, -p.r, p.r*2, p.r*2);
-        ctx.restore();
-      });
+      ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height);
+      confettiPieces = confettiPieces.filter(p=> p.alpha>0 && p.y < confettiCanvas.height + 20);
+      confettiPieces.forEach(p=>{ p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.alpha -= 0.006; ctx.save(); ctx.globalAlpha = Math.max(p.alpha,0); ctx.translate(p.x, p.y); ctx.rotate(p.rot * Math.PI/180); const h = (p.rot % 360); ctx.fillStyle = `hsl(${h}, 90%, 70%)`; ctx.fillRect(-p.r, -p.r, p.r*2, p.r*2); ctx.restore(); });
     })();
+
+    // ---------- Floating Hearts (subtle) ----------
+    const hcv = document.getElementById('hearts');
+    const hctx = hcv.getContext('2d');
+    function resizeHearts(){ hcv.width = innerWidth; hcv.height = innerHeight }
+    window.addEventListener('resize', resizeHearts); resizeHearts();
+    let hearts = [];
+    function spawnHeart(){
+      hearts.push({x: Math.random()*hcv.width, y: hcv.height+20, s: 12+Math.random()*20, vy: 0.6+Math.random()*1.1, a: .25+.35*Math.random()});
+    }
+    setInterval(spawnHeart, 700);
+    (function loopHearts(){ requestAnimationFrame(loopHearts); hctx.clearRect(0,0,hcv.width,hcv.height); hearts = hearts.filter(h=> h.y> -40 && h.a>0); hearts.forEach(h=>{ h.y -= h.vy; h.a -= 0.0015; hctx.save(); hctx.globalAlpha = h.a; hctx.font = `${h.s}px serif`; hctx.fillStyle = '#ff6ea5'; hctx.fillText('❤', h.x, h.y); hctx.restore(); }); })();
 
     // ---------- Music Autoplay after First Interaction ----------
     const bgm = document.getElementById('bgm');
     const toggleBtn = document.getElementById('musicToggle');
-
-    let musicStarted = false;
-    let audioMode = 'tag'; // 'tag' | 'synth'
-    let audioCtx, masterGain, padNodes = [], beatInt;
-
+    const shareBtn = document.getElementById('shareBtn');
+    let musicStarted = false; let audioMode = 'tag'; let audioCtx, masterGain, padNodes = [], beatInt;
     function startWebAudio(){
-      if(audioCtx) return;
-      audioMode = 'synth';
+      if(audioCtx) return; audioMode = 'synth';
       audioCtx = new (window.AudioContext||window.webkitAudioContext)();
-      masterGain = audioCtx.createGain();
-      masterGain.gain.value = 0.12; // เบาๆ
-      masterGain.connect(audioCtx.destination);
-
-      // Ambient pad: simple triad that fades in/out ช้าๆ
-      const freqs = [261.63, 329.63, 392.00]; // C major triad (C E G)
-      padNodes = freqs.map(f=>{
-        const o = audioCtx.createOscillator();
-        o.type = 'sine';
-        o.frequency.value = f;
-        const g = audioCtx.createGain();
-        g.gain.value = 0.0;
-        o.connect(g).connect(masterGain);
-        o.start();
-        return {osc:o, gain:g};
-      });
-      function breathe(){
-        const now = audioCtx.currentTime;
-        padNodes.forEach((p,i)=>{
-          const g = p.gain; g.cancelScheduledValues(now);
-          const base = 0.06 + i*0.01;
-          g.setValueAtTime(g.gain?.value||0, now);
-          g.linearRampToValueAtTime(base+0.04, now+2.5);
-          g.linearRampToValueAtTime(base, now+5.0);
-        });
-      }
-      breathe();
-      setInterval(breathe, 4800);
-
-      // Soft bell every 8s
-      function bell(){
-        const o = audioCtx.createOscillator();
-        o.type = 'triangle';
-        o.frequency.value = 523.25; // C5
-        const g = audioCtx.createGain(); g.gain.value = 0.0;
-        const f = audioCtx.createBiquadFilter(); f.type='lowpass'; f.frequency.value = 1200;
-        o.connect(f).connect(g).connect(masterGain);
-        o.start();
-        const now = audioCtx.currentTime;
-        g.gain.setValueAtTime(0, now);
-        g.gain.linearRampToValueAtTime(0.18, now+0.05);
-        g.gain.exponentialRampToValueAtTime(0.0001, now+2.2);
-        o.stop(now+2.3);
-      }
+      masterGain = audioCtx.createGain(); masterGain.gain.value = 0.12; masterGain.connect(audioCtx.destination);
+      const freqs = [261.63, 329.63, 392.00];
+      padNodes = freqs.map(f=>{ const o = audioCtx.createOscillator(); o.type = 'sine'; o.frequency.value = f; const g = audioCtx.createGain(); g.gain.value = 0.0; o.connect(g).connect(masterGain); o.start(); return {osc:o, gain:g}; });
+      function breathe(){ const now = audioCtx.currentTime; padNodes.forEach((p,i)=>{ const g = p.gain; g.cancelScheduledValues(now); const base = 0.06 + i*0.01; g.setValueAtTime(g.gain?.value||0, now); g.linearRampToValueAtTime(base+0.04, now+2.5); g.linearRampToValueAtTime(base, now+5.0); }); }
+      breathe(); setInterval(breathe, 4800);
+      function bell(){ const o = audioCtx.createOscillator(); o.type = 'triangle'; o.frequency.value = 523.25; const g = audioCtx.createGain(); g.gain.value = 0.0; const f = audioCtx.createBiquadFilter(); f.type='lowpass'; f.frequency.value = 1200; o.connect(f).connect(g).connect(masterGain); o.start(); const now = audioCtx.currentTime; g.gain.setValueAtTime(0, now); g.gain.linearRampToValueAtTime(0.18, now+0.05); g.gain.exponentialRampToValueAtTime(0.0001, now+2.2); o.stop(now+2.3); }
       beatInt = setInterval(bell, 8000);
-
-      toggleBtn.style.display='inline-flex';
-      toggleBtn.textContent = '⏸︎ ปิดเพลง';
+      toggleBtn.style.display='inline-flex'; toggleBtn.textContent = '⏸︎ ปิดเพลง';
     }
-
     async function startMusic(){
-      if(musicStarted) return;
-      musicStarted = true;
-      try{
-        bgm.volume = 0.6;
-        await bgm.play();
-        audioMode = 'tag';
-        toggleBtn.style.display='inline-flex';
-        toggleBtn.textContent = '⏸︎ ปิดเพลง';
-      }catch(e){
-        startWebAudio();
-      }
+      if(musicStarted) return; musicStarted = true;
+      try{ bgm.volume = 0.6; await bgm.play(); audioMode = 'tag'; toggleBtn.style.display='inline-flex'; toggleBtn.textContent = '⏸︎ ปิดเพลง'; }
+      catch(e){ startWebAudio(); }
       ['click','touchstart','keydown'].forEach(ev=> window.removeEventListener(ev, startMusic));
     }
-
     ['click','touchstart','keydown'].forEach(ev=> window.addEventListener(ev, startMusic, {once:false}));
-
     toggleBtn.addEventListener('click', async ()=>{
       if(audioMode==='tag'){
         if(bgm.paused){ await bgm.play(); toggleBtn.textContent='⏸︎ ปิดเพลง'; }
@@ -500,24 +433,22 @@
       }
     });
 
-    // ยิงคอนเฟตติตอนเข้าเว็บเล็กน้อย
+    // ---------- Web Share ----------
+    shareBtn?.addEventListener('click', async ()=>{
+      try{ if(navigator.share){ await navigator.share({title: document.title, text: 'เปิดเลย มีของขวัญให้เธอ 🎁', url: location.href}); } else { alert('คัดลอกลิงก์แล้วนะ'); await navigator.clipboard?.writeText(location.href); } }
+      catch(e){ console.log('share cancelled'); }
+    });
+
+    // ---------- Fire small confetti on load ----------
     fireConfetti(80);
 
-    // ---------- Tiny Test Suite (opt-in with #test) ----------
+    // ---------- Tiny Tests (#test) ----------
     (function runTests(){
-      if(location.hash !== '#test') return;
-      console.group('Birthday Page Tests');
-      // sanitizeDigits
-      console.assert(sanitizeDigits('12-34a6')==='12346', 'sanitizeDigits should strip non-digits');
-      console.assert(sanitizeDigits('')==='', 'sanitizeDigits empty');
-      // carousel index wrap logic
-      (function(){
-        const len = 5; let i=0; const mod = x=> (x+len)%len;
-        i = mod(-1); console.assert(i===4, 'wrap negative index');
-        i = mod(7); console.assert(i===2, 'wrap overflow index');
-      })();
-      console.log('All tests executed. If no assertion failed, you\'re good!');
-      console.groupEnd();
+      if(location.hash !== '#test') return; console.group('Birthday Page Tests');
+      const mod = (x,l)=> (x+l)%l; console.assert(mod(-1,5)===4, 'wrap negative'); console.assert(mod(7,5)===2, 'wrap overflow');
+      console.assert(sanitizeDigits('12-34a6')==='12346', 'sanitizeDigits works'); console.assert(sanitizeDigits('')==='', 'sanitizeDigits empty');
+      const swipeDir = dx=> (Math.abs(dx)>50? (dx>0? 'right':'left'):'none'); console.assert(swipeDir(100)==='right','swipe right'); console.assert(swipeDir(-80)==='left','swipe left'); console.assert(swipeDir(20)==='none','swipe none');
+      console.log('All tests executed. If no assertion failed, you\'re good!'); console.groupEnd();
     })();
   </script>
 </body>
